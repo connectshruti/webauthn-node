@@ -15,7 +15,9 @@
   "description": "",
   "main": "server.ts",
   "scripts": {
-    "dev": "tsx server.js"
+    "build": "tsc", 
+    "start": "node dist/server.js",
+    "dev": "tsx server.ts"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +27,7 @@
     "@types/express": "^5.0.1",
     "@types/jsonwebtoken": "^9.0.9",
     "@types/node": "^22.13.14",
-    "ts-node": "^10.9.2"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
   }
 }
