@@ -274,7 +274,7 @@ export const verifyWithPasskey = async (req: AuthRequest, res: Response) => {
     await Challenge.deleteMany({ userId });
 
     const token = generateToken(userId);
-    res.cookie("token", token, { httpOnly: true, secure: process.env.NODE_ENV === "production",sameSite:'none',path:"/" });
+    res.cookie("token", token, { httpOnly: true, secure: process.env.NODE_ENV === "production", sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',path:"/" });
 
      res.status(200).json({ success: true, message: "Login successful", token });
     return;

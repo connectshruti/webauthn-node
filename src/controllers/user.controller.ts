@@ -68,12 +68,7 @@ export const loginUser = async (req: Request, res: Response) => {
         const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET!, { expiresIn: "7d" });
 
         // Set token in HTTP-Only Cookie
-        res.cookie("token", token, {
-            httpOnly: true,
-            secure: process.env.NODE_ENV==="production", // Secure in production
-            sameSite: "none",
-            path:"/"
-        });
+        res.cookie("token", token, { httpOnly: true, secure: process.env.NODE_ENV === "production", sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',path:"/" });
 
          res.status(200).json({
             success: true,
@@ -95,7 +90,8 @@ export const loginUser = async (req: Request, res: Response) => {
 // Logout User
 export const logoutUser = async (req: Request, res: Response) => {
     try {
-        res.clearCookie("token", { httpOnly: true,secure:process.env.NODE_ENV==="production", sameSite: "none",path:"/" });
+        res.clearCookie("token",{ httpOnly: true, secure: process.env.NODE_ENV === "production", sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',path:"/" });
+        
          res.status(200).json({ success: true, message: "Logout successful" });
          return
     } catch (error) {

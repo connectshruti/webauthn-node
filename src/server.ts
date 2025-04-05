@@ -10,9 +10,11 @@ const port = process.env.PORT || 3000;
 //Connect to MongoDB
 connectDB();
 // Middleware
-app.use(cors({ credentials: true, origin: `${process.env.REACT_APP_FRONTEND}`,  methods: "GET,POST,PUT,DELETE" })); // Adjust for frontend
+app.use(cors({ credentials: true,
+     origin: `${process.env.REACT_APP_FRONTEND}`,
+       methods: "GET,POST,PUT,DELETE" })); // Adjust for frontend
 app.use(express.json()); // Allows JSON request bodies
-app.use(cookieParser()); // Allows reading cookies
+app.use(cookieParser(process.env.COOKIE_SECRET || '38374283472377y2euhwe8wrudhfdfsalfd')); // Allows reading cookies
 
 app.use('/api/user', userRouter);
 app.use('/api/passkey', passkeyRouter);
