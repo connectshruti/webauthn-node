@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
+"target": "ESNext",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "target": "ESNext",
-    "esModuleInterop": true,
-    "strict": true,
     "rootDir": "./src",
     "outDir": "./dist",
-    "types": ["node", "express", "jsonwebtoken"]
+    "esModuleInterop": true,
+    "strict": true,
+    "typeRoots": ["./node_modules/@types"], // 🧠 tell TS where to look for types
+    "types": ["node", "express", "jsonwebtoken"] // ✅ explicitly declare needed types
   },
   "include": ["src"]
 }
