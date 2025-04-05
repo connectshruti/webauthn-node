@@ -1,6 +1,4 @@
 // Passkey Model: Stores WebAuthn passkeys (credential ID, public key, authentication counter).
-
-import { User } from './user.model.js';
 import mongoose, { Schema, Document } from 'mongoose';
 
 export interface IPasskey extends Document {

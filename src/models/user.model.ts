@@ -1,6 +1,5 @@
 // User Model: Defines users with authentication details and supports JWT token generation.
 
-import { Passkey } from './passkey.model.js';
 import mongoose, { Document } from 'mongoose';
 import jwt from "jsonwebtoken";
 

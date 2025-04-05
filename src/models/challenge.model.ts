@@ -1,8 +1,6 @@
 // Challenge Model: Stores WebAuthn challenges for user authentication, expiring after 5 minutes.
 
 import mongoose, { Schema, Document } from 'mongoose';
-import { User } from './user.model.js';
-
 interface IChallenge extends Document {
     userId: mongoose.Schema.Types.ObjectId;
     payload: string;
