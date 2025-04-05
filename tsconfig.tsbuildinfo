@@ -1,0 +1,1 @@
+{"root":["./src/config/db.ts","./src/controllers/passkey.controller.ts","./src/controllers/user.controller.ts","./src/middlewares/auth.ts","./src/models/challenge.model.ts","./src/models/passkey.model.ts","./src/models/user.model.ts","./src/routes/passkeyroutes.ts","./src/routes/userroutes.ts","./src/types/auth.ts"],"version":"5.8.2"}
